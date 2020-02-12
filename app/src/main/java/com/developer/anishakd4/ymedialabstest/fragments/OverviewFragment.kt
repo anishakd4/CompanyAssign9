@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.developer.anishakd4.ymedialabstest.adapters.RecyclerviewAdapter
 import com.developer.anishakd4.ymedialabstest.databinding.FragmentOverviewBinding
 
 class OverviewFragment : Fragment() {
@@ -19,6 +20,8 @@ class OverviewFragment : Fragment() {
         val binding = FragmentOverviewBinding.inflate(inflater)
         binding.setLifecycleOwner(this)
         binding.viewModel = viewModel
+
+        binding.list.adapter = RecyclerviewAdapter()
 
         return binding.root
     }
