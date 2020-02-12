@@ -25,6 +25,7 @@ class RecyclerviewAdapter : ListAdapter<VariantGroupsModel, RecyclerviewAdapter.
     class MyViewHolder(val binding: ListItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(variantGroupsModel: VariantGroupsModel) {
             binding.item = variantGroupsModel
+            binding.radioList.adapter = RadioListAdapter()
         }
 
         companion object {
