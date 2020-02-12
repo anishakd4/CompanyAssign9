@@ -1,17 +1,16 @@
 package com.developer.anishakd4.ymedialabstest.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.developer.anishakd4.ymedialabstest.databinding.ListItemBinding
 import com.developer.anishakd4.ymedialabstest.databinding.RadioListItemBinding
-import com.developer.anishakd4.ymedialabstest.models.VariantGroupsModel
 import com.developer.anishakd4.ymedialabstest.models.VariationsModel
 
 class RadioListAdapter : ListAdapter<VariationsModel, RadioListAdapter.RadioViewHolder>(DiffCallBack) {
+
+    var lastSelectedPosition = -1
 
     companion object DiffCallBack : DiffUtil.ItemCallback<VariationsModel>() {
         override fun areItemsTheSame(oldItem: VariationsModel, newItem: VariationsModel): Boolean {
@@ -44,5 +43,10 @@ class RadioListAdapter : ListAdapter<VariationsModel, RadioListAdapter.RadioView
 
     override fun onBindViewHolder(holder: RadioViewHolder, position: Int) {
         holder.bind(getItem(position))
+        holder.binding.radioButton.isChecked = (lastSelectedPosition == position)
+        holder.binding.radioButton.setOnClickListener {
+            lastSelectedPosition = position;
+            notifyDataSetChanged()
+        }
     }
 }

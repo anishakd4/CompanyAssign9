@@ -23,25 +23,34 @@
             android:textColor="@android:color/black"
             android:textSize="15sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/radio_list"
+            app:layout_constraintBottom_toTopOf="@id/rgroup"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Name" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/radio_list"
+        <RadioGroup
+            android:id="@+id/rgroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            tools:itemCount="3"
-            tools:listitem="@layout/radio_list_item"
-            app:listdataRadio="@{item.variations}"/>
+            app:layout_constraintTop_toBottomOf="@+id/textView">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/radio_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/radio_list_item"
+                app:listdataRadio="@{item.variations}"/>
+
+        </RadioGroup>
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
