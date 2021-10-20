@@ -10,7 +10,7 @@ import com.developer.anishakd4.ymedialabstest.models.VariationsModel
 
 class RadioListAdapter : ListAdapter<VariationsModel, RadioListAdapter.RadioViewHolder>(DiffCallBack) {
 
-    var lastSelectedPosition = -1
+    var lastSelectedPosition = 0
 
     companion object DiffCallBack : DiffUtil.ItemCallback<VariationsModel>() {
         override fun areItemsTheSame(oldItem: VariationsModel, newItem: VariationsModel): Boolean {

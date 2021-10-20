@@ -8,13 +8,21 @@
             type="com.developer.anishakd4.ymedialabstest.models.VariationsModel" />
     </data>
 
-    <com.google.android.material.radiobutton.MaterialRadioButton
-        android:id="@+id/radio_button"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:text="@{item.name}"
-        tools:text="Item">
+        android:elevation="8dp"
+        android:padding="4dp"
+        android:layout_margin="2dp">
 
-    </com.google.android.material.radiobutton.MaterialRadioButton>
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radio_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:text="@{item.name}"
+            tools:text="Item"/>
+
+    </androidx.cardview.widget.CardView>
+
 </layout>

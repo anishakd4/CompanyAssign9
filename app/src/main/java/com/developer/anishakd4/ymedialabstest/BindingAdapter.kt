@@ -15,6 +15,9 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<VariantGroupsModel>?
     adapter.submitList(data)
 }
 
+
+
+
 @BindingAdapter("listdataRadio")
 fun bindRecyclerViewRadio(recyclerView: RecyclerView, data: List<VariationsModel>?){
     Log.i("anisham","anisham listdataRadio bindRecyclerView ${data?.size}")
